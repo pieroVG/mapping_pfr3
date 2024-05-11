@@ -68,11 +68,11 @@
     <link name="gh_wheel">
         <visual>
             <geometry>
-                <cylinder radius="0.055" length="0.07"/>
+                <cylinder radius="0.0575" length="0.07"/>
             </geometry>
             <material name="blue"/>
         </visual>
-        <xacro:inertial_cylinder mass="0.1" length="0.07" radius="0.055">
+        <xacro:inertial_cylinder mass="0.1" length="0.07" radius="0.0575">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
@@ -89,11 +89,11 @@
     <link name="gb_wheel">
         <visual>
             <geometry>
-                <cylinder radius="0.055" length="0.07"/>
+                <cylinder radius="0.0575" length="0.07"/>
             </geometry>
             <material name="blue"/>
         </visual>
-        <xacro:inertial_cylinder mass="0.1" length="0.07" radius="0.055">
+        <xacro:inertial_cylinder mass="0.1" length="0.07" radius="0.0575">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
@@ -110,11 +110,11 @@
     <link name="dh_wheel">
         <visual>
             <geometry>
-                <cylinder radius="0.055" length="0.07"/>
+                <cylinder radius="0.0575" length="0.07"/>
             </geometry>
             <material name="blue"/>
         </visual>
-        <xacro:inertial_cylinder mass="0.1" length="0.07" radius="0.055">
+        <xacro:inertial_cylinder mass="0.1" length="0.07" radius="0.0575">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
@@ -131,11 +131,11 @@
     <link name="db_wheel">
         <visual>
             <geometry>
-                <cylinder radius="0.055" length="0.07"/>
+                <cylinder radius="0.0575" length="0.07"/>
             </geometry>
             <material name="blue"/>
         </visual>
-        <xacro:inertial_cylinder mass="0.1" length="0.07" radius="0.055">
+        <xacro:inertial_cylinder mass="0.1" length="0.07" radius="0.0575">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
