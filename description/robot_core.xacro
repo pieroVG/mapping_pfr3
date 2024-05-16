@@ -58,7 +58,7 @@
 
      <!-- ROUE Gauche Haut GH -->
 
-     <joint name="gh_wheel_joint" type="continuous">
+     <joint name="gh_wheel_joint" type="fixed">
         <parent link="base_link"/>
         <child link="gh_wheel"/>
         <origin xyz="0.1 0.135 0" rpy="-${pi/2} 0 0" />
@@ -79,7 +79,7 @@
 
      <!-- ROUE GB -->
 
-     <joint name="gb_wheel_joint" type="continuous">
+     <joint name="gb_wheel_joint" type="fixed">
         <parent link="base_link"/>
         <child link="gb_wheel"/>
         <origin xyz="-0.1 0.135 0" rpy="-${pi/2} 0 0" />
@@ -100,7 +100,7 @@
 
     <!-- ROUE DH -->
 
-    <joint name="dh_wheel_joint" type="continuous">
+    <joint name="dh_wheel_joint" type="fixed">
         <parent link="base_link"/>
         <child link="dh_wheel"/>
         <origin xyz="0.1 -0.135 0" rpy="-${pi/2} 0 0" />
@@ -121,7 +121,7 @@
 
     <!-- ROUE DB -->
 
-    <joint name="db_wheel_joint" type="continuous">
+    <joint name="db_wheel_joint" type="fixed">
         <parent link="base_link"/>
         <child link="db_wheel"/>
         <origin xyz="-0.1 -0.135 0" rpy="-${pi/2} 0 0" />
