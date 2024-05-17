@@ -1,0 +1,69 @@
+def detect_color(r, g, b):
+    # Détection de la couleur grise
+    if is_gray(r, g, b):
+        return 'Gris'
+
+    # Appliquer la quantification sur les 2 premiers bits pour chaque composante
+    resultat_rouge = two_bit_quantification(r)
+    resultat_vert = two_bit_quantification(g)
+    resultat_bleu = two_bit_quantification(b)
+
+    # Organiser les résultats dans un seul nombre sur 6 bits
+    resultat_final = (resultat_rouge << 4) | (resultat_vert << 2) | resultat_bleu
+
+    # Détecter la couleur
+    return detect_couleur(resultat_final)
+
+
+def is_gray(r, g, b):
+    seuil_gris = 30
+
+    # Calculer les différences entre les composantes RGB
+    diff_r = abs(r - b)
+    diff_g = abs(g - b)
+    diff_b = abs(b - r)
+
+    # Vérifier la proximité des valeurs par rapport aux seuils
+    return diff_r <= seuil_gris and diff_g <= seuil_gris and diff_b <= seuil_gris
+
+
+def two_bit_quantification(value):
+    # Appliquer un masque pour conserver seulement les 2 premiers bits
+    masque = 0b11000000  # Masque binaire 11000000 (192 en décimal)
+    resultat = (value & masque) >> 6  # Décalage pour obtenir le résultat sur les 2 premiers bits
+    return resultat
+
+
+def detect_couleur(valeur):
+    # Détermination des plages pour chaque couleur
+    if 45 <= valeur <= 48:
+        return 'Rouge'
+    elif 48 <= valeur <= 57:
+        return 'Orange'
+    elif 59 <= valeur <= 61:
+        return 'Jaune'
+    elif 14 <= valeur <= 40:
+        return 'Marron'
+    elif 1 <= valeur <= 8:
+        return 'Bleu'
+    else:
+        return 'Non détecté'  # Couleur non détectée
+
+
+
+
+height, width, _ = cv_image.shape
+color_msg = String()
+
+
+# Convertir les coordonnées normalisées en coordonnées d'image réelles
+pixel_x = int((x + 1) / 2 * width)
+pixel_y = int((y + 1) / 2 * height)
+
+# Accéder au pixel au centre de la balle
+(B, G, R) = cv_image[pixel_y, pixel_x]
+
+color_msg.data = get_color_name(R, G, B)
+
+# Publiez le message
+self.ball_color.publish(color_msg)
